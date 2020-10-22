@@ -23,7 +23,7 @@ int CStringUtil::GetLength(CStringW& strString)
 	return nLen;
 }
 
-CStringA nmCStringUtil::Mid(CStringA& strString, int nStart, int nEnd)
+CStringA CStringUtil::Mid(CStringA& strString, int nStart, int nEnd)
 {
 	USES_CONVERSION;
 	CStringW strW = CA2W(strString);
@@ -38,7 +38,7 @@ CStringA nmCStringUtil::Mid(CStringA& strString, int nStart, int nEnd)
 	return strRet;
 }
 
-CStringW nmCStringUtil::Mid(CStringW& strString, int nStart, int nEnd)
+CStringW CStringUtil::Mid(CStringW& strString, int nStart, int nEnd)
 {
 	CStringW strRet;
 	int nLoop = 0;
