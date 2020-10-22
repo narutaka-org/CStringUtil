@@ -1,5 +1,5 @@
 #pragma once
-class cCStringUtil
+class CStringUtil
 {
 public:
 	int GetLength(CStringA &strString);
