@@ -66,3 +66,20 @@ CStringW CStringUtil::Mid(CStringW& strString, int nStart, int nEnd)
 	}
 	return strRet;
 }
+
+CStringA CStringUtil::escape5c(CStringW& strString)
+{
+	CStringW tmListT = _T("―ソЫⅨ噂浬欺圭構蚕十申曾箪貼能表暴予禄兔喀媾彌拿杤歃濬畚秉綵臀藹觸軆鐔饅鷭偆砡");
+	for(int i=0; i < tmListT.GetLength(); ++i)
+	{
+		int indexFirst = strString.Find(tmListT.GetAt(i));
+		while (indexFirst != -1)
+		{
+			strString.Insert(indexFirst + 1, _T("\\"));
+			indexFirst = strString.Find(tmListT.GetAt(i), indexFirst + 1);
+		}
+	}
+	USES_CONVERSION;
+	CStringW strW = CA2W(strString);
+	return strW;
+}
